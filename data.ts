@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const RETURN_ITEMS = {
+export const ITEM_CATEGORIES = {
   armors: "armors",
   backpacks: "backpacks",
   guns: "guns",
@@ -49,27 +49,27 @@ const maps = [
 
 export const getItems = (itemType: string) => {
   switch (itemType) {
-    case RETURN_ITEMS.armors:
+    case ITEM_CATEGORIES.armors:
       const randomIndex = Math.floor(Math.random() * armors.length);
       const armor = armors[randomIndex];
       return armor.name;
-    case RETURN_ITEMS.maps:
+    case ITEM_CATEGORIES.maps:
       const randomMapIndex = Math.floor(Math.random() * maps.length);
       const map = maps[randomMapIndex];
       return map;
-    case RETURN_ITEMS.backpacks:
+    case ITEM_CATEGORIES.backpacks:
       const randomBackpackIndex = Math.floor(Math.random() * backpacks.length);
       const backpack = backpacks[randomBackpackIndex];
       return backpack.name;
-    case RETURN_ITEMS.guns:
+    case ITEM_CATEGORIES.guns:
       const randomGunIndex = Math.floor(Math.random() * guns.length);
       const gun = guns[randomGunIndex];
       return gun.name;
-    case RETURN_ITEMS.helmets:
+    case ITEM_CATEGORIES.helmets:
       const randomHelmetIndex = Math.floor(Math.random() * helmets.length);
       const helmet = helmets[randomHelmetIndex];
       return helmet.name;
-    case RETURN_ITEMS.rigs:
+    case ITEM_CATEGORIES.rigs:
       const randomRigIndex = Math.floor(Math.random() * rigs.length);
       const rig = rigs[randomRigIndex];
       return rig.name;
@@ -79,11 +79,11 @@ export const getItems = (itemType: string) => {
 };
 
 export const returnEquipment = () => {
-  const gun = getItems(RETURN_ITEMS.guns);
-  const armor = getItems(RETURN_ITEMS.armors);
-  const helmet = getItems(RETURN_ITEMS.helmets);
-  const backpack = getItems(RETURN_ITEMS.backpacks);
-  const rig = getItems(RETURN_ITEMS.rigs);
+  const gun = getItems(ITEM_CATEGORIES.guns);
+  const armor = getItems(ITEM_CATEGORIES.armors);
+  const helmet = getItems(ITEM_CATEGORIES.helmets);
+  const backpack = getItems(ITEM_CATEGORIES.backpacks);
+  const rig = getItems(ITEM_CATEGORIES.rigs);
   const equipment: equipment = {
     gun: gun,
     armor: armor,
