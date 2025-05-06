@@ -14,7 +14,6 @@ const client = new Client({
 
 client.once("ready", () => {
   initData();
-  console.log("Bot is ready!");
 });
 
 client.on("messageCreate", async (message) => {
@@ -45,7 +44,6 @@ client.on("messageCreate", async (message) => {
   }
   if (message.content === "!equipment") {
     const equipment = returnEquipment();
-    const gun = equipment.gun;
     await message.channel.send(
       `Random equipment:\n Gun: ${equipment.gun},\n Armor: ${equipment.armor},\n Helmet: ${equipment.helmet},\n Backpack: ${equipment.backpack},\n Rig: ${equipment.rig}`
     );
