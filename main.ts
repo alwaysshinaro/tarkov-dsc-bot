@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
-import { initData } from "./data/init-data";
-import { commands } from "./command";
+import initData from "./func/init-func";
+import commands from "./actions/command";
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ client.once("ready", () => {
 });
 
 client.on("messageCreate", async (message) => {
-    commands(message);
+  commands(message);
 });
 
 client.login(process.env.DISCORD_TOKEN);

@@ -1,12 +1,12 @@
 import { Message, OmitPartialGroupDMChannel } from "discord.js";
-import { getMaps } from "./data/map-data";
-import { getItems, ITEM_CATEGORIES, returnEquipment } from "./data/item-data";
-import { getBosses } from "./data/boss-data";
-import { getChallenge } from "./data/challenge";
+import getMaps from "../func/map-func";
+import getBosses from "../func/boss-func";
+import getChallenge from "../func/challenge-func";
+import getItems from "../func/item-func";
+import { ITEM_CATEGORIES } from "../types/interface";
+import returnEquipment from "../func/equip-func";
 
-export const commands = (
-  message: OmitPartialGroupDMChannel<Message<boolean>>
-) => {
+const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
   if (message.author.bot) return;
   if (message.content === "!map") {
     message.channel.send("Random map: " + getMaps());
@@ -24,9 +24,8 @@ export const commands = (
     message.channel.send("Random rig: " + getItems(ITEM_CATEGORIES.rigs));
   }
   if (message.content === "!backpack") {
-    message.channel.send(
-      "Random backpack: " + getItems(ITEM_CATEGORIES.backpacks)
-    );
+    const backpack = getItems(ITEM_CATEGORIES.backpacks);
+    message.channel.send("Random BackPack: " + backpack);
   }
   if (message.content === "!equipment") {
     const equipment = returnEquipment();
@@ -36,10 +35,12 @@ export const commands = (
   }
   if (message.content === "!boss") {
     const boss = getBosses();
-    message.channel.send("Random boss: " + boss);
+    message.channel.send("Random Boss: " + boss);
   }
   if (message.content === "!challenge") {
     const challenge = getChallenge();
     message.channel.send(challenge);
   }
 };
+
+export default commands;
