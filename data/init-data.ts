@@ -1,3 +1,4 @@
+import { bosses, BossRes } from "./boss-data";
 import {
   ItemsRes,
   backpacks,
@@ -15,6 +16,7 @@ const BASE_URL = "https://api.tarkov.dev/graphql";
 // 初回データ取得
 export const initData = async () => {
   fetchItems();
+  fetchBosses();
 };
 
 const fetchItems = async () => {
@@ -60,17 +62,24 @@ const sortingItems = (items: Item[]) => {
   console.timeEnd("sortingItems");
 };
 
+// ボスデータを取得
 const fetchBosses = async () => {
   const query = `
-    {
-    bosses{
-      name
-      imagePosterLink
-      imagePortraitLink
-      health{
-        max
-        bodyPart
+      {
+      bosses{
+        name
       }
+  }`;
+
+  try {
+    const response = await axios.post(BASE_URL, {
+      query: query,
+    });
+    const res: BossRes = response.data.data;
+    if (res && res.bosses) {
+      bosses.push(...res.bosses);
     }
-}`;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 };

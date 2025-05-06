@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
-import { getItems, ITEM_CATEGORIES, returnEquipment } from "./data/item-data";
 import { initData } from "./data/init-data";
+import { commands } from "./command";
 
 dotenv.config();
 
@@ -18,40 +18,7 @@ client.once("ready", () => {
 });
 
 client.on("messageCreate", async (message) => {
-  if (message.author.bot) return;
-  if (message.content === "!map") {
-    const map = getItems(ITEM_CATEGORIES.maps);
-    await message.channel.send("Random map: " + map);
-  }
-  if (message.content === "!weapon") {
-    const weapon = getItems(ITEM_CATEGORIES.guns);
-    await message.channel.send("Random weapon: " + weapon);
-  }
-  if (message.content === "!armor") {
-    const armor = getItems(ITEM_CATEGORIES.armors);
-    await message.channel.send("Random armor: " + armor);
-  }
-  if (message.content === "!helmet") {
-    const helmet = getItems(ITEM_CATEGORIES.helmets);
-    await message.channel.send("Random helmet: " + helmet);
-  }
-  if (message.content === "!rig") {
-    const rig = getItems(ITEM_CATEGORIES.rigs);
-    await message.channel.send("Random rig: " + rig);
-  }
-  if (message.content === "!backpack") {
-    const backpack = getItems(ITEM_CATEGORIES.backpacks);
-    await message.channel.send("Random backpack: " + backpack);
-  }
-  if (message.content === "!equipment") {
-    const equipment = returnEquipment();
-    await message.channel.send(
-      `Random equipment:\n Gun: ${equipment.gun},\n Armor: ${equipment.armor},\n Helmet: ${equipment.helmet},\n Backpack: ${equipment.backpack},\n Rig: ${equipment.rig}`
-    );
-  }
-  if (message.content === "!challenge") {
-    await message.channel.send("challenge");
-  }
+    commands(message);
 });
 
 client.login(process.env.DISCORD_TOKEN);

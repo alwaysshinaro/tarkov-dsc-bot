@@ -1,11 +1,8 @@
-import { maps } from "./map-data";
-
 export const ITEM_CATEGORIES = {
   armors: "armors",
   backpacks: "backpacks",
   guns: "guns",
   helmets: "helmets",
-  maps: "maps",
   rigs: "rigs",
 };
 
@@ -40,10 +37,6 @@ export const getItems = (itemType: string) => {
       const randomIndex = Math.floor(Math.random() * armors.length);
       const armor = armors[randomIndex];
       return armor.name;
-    case ITEM_CATEGORIES.maps:
-      const randomMapIndex = Math.floor(Math.random() * maps.length);
-      const map = maps[randomMapIndex];
-      return map;
     case ITEM_CATEGORIES.backpacks:
       const randomBackpackIndex = Math.floor(Math.random() * backpacks.length);
       const backpack = backpacks[randomBackpackIndex];
