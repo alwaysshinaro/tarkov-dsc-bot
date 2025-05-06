@@ -4,7 +4,7 @@ import getBosses from "../func/boss-func";
 import getChallenge from "../func/challenge-func";
 import getItems from "../func/item-func";
 import { ITEM_CATEGORIES } from "../types/interface";
-import returnEquipment from "../func/equip-func";
+import getEquipment from "../func/equip-func";
 
 const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
   if (message.author.bot) return;
@@ -28,7 +28,7 @@ const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
     message.channel.send("Random BackPack: " + backpack);
   }
   if (message.content === "!equipment") {
-    const equipment = returnEquipment();
+    const equipment = getEquipment();
     message.channel.send(
       `Random equipment:\n Gun: ${equipment.gun},\n Armor: ${equipment.armor},\n Helmet: ${equipment.helmet},\n Backpack: ${equipment.backpack},\n Rig: ${equipment.rig}`
     );

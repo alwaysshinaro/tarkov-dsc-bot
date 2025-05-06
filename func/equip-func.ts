@@ -1,7 +1,7 @@
 import { equipment, ITEM_CATEGORIES } from "../types/interface";
 import getItems from "./item-func";
 
-const returnEquipment = () => {
+const getEquipment = () => {
   const gun = getItems(ITEM_CATEGORIES.guns);
   const armor = getItems(ITEM_CATEGORIES.armors);
   const helmet = getItems(ITEM_CATEGORIES.helmets);
@@ -17,4 +17,4 @@ const returnEquipment = () => {
   return equipment;
 };
 
-export default returnEquipment;
+export default getEquipment;
