@@ -1,18 +1,18 @@
-import { equipment, ITEM_CATEGORIES } from "../types/interface";
+import { equipment, Item, ITEM_CATEGORIES } from "../types/interface";
 import getItems from "./item-func";
 
 const getEquipment = () => {
-  const gun = getItems(ITEM_CATEGORIES.guns);
-  const armor = getItems(ITEM_CATEGORIES.armors);
-  const helmet = getItems(ITEM_CATEGORIES.helmets);
-  const backpack = getItems(ITEM_CATEGORIES.backpacks);
-  const rig = getItems(ITEM_CATEGORIES.rigs);
+  const gun = getItems(ITEM_CATEGORIES.guns)as Item;
+  const armor = getItems(ITEM_CATEGORIES.armors) as Item;
+  const helmet = getItems(ITEM_CATEGORIES.helmets) as Item;
+  const backpack = getItems(ITEM_CATEGORIES.backpacks) as Item;
+  const rig = getItems(ITEM_CATEGORIES.rigs) as Item;
   const equipment: equipment = {
     gun: gun,
     armor: armor,
     helmet: helmet,
     backpack: backpack,
-    rig: rig,
+    rig: rig
   };
   return equipment;
 };

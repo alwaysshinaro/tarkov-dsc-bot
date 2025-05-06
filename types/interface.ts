@@ -1,6 +1,8 @@
 interface Item {
   name: string;
   types: string[];
+  image512pxLink: string;
+  wikiLink: string;
 }
 
 interface ItemsRes {
@@ -8,15 +10,16 @@ interface ItemsRes {
 }
 
 interface equipment {
-  gun: string;
-  armor: string;
-  helmet: string;
-  backpack: string;
-  rig: string;
+  gun: Item;
+  armor: Item;
+  helmet: Item;
+  backpack: Item;
+  rig: Item;
 }
 
 interface Boss{
     name: string;
+    imagePosterLink: string;
 }
 
 interface BossRes{
