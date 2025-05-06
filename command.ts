@@ -2,6 +2,7 @@ import { Message, OmitPartialGroupDMChannel } from "discord.js";
 import { getMaps } from "./data/map-data";
 import { getItems, ITEM_CATEGORIES, returnEquipment } from "./data/item-data";
 import { getBosses } from "./data/boss-data";
+import { getChallenge } from "./data/challenge";
 
 export const commands = (
   message: OmitPartialGroupDMChannel<Message<boolean>>
@@ -36,5 +37,9 @@ export const commands = (
   if (message.content === "!boss") {
     const boss = getBosses();
     message.channel.send("Random boss: " + boss);
+  }
+  if (message.content === "!challenge") {
+    const challenge = getChallenge();
+    message.channel.send(challenge);
   }
 };
