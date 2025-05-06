@@ -1,20 +1,19 @@
-import { bosses, BossRes } from "./boss-data";
 import {
-  ItemsRes,
-  backpacks,
-  helmets,
+  Items,
   guns,
   armors,
-  Item,
-  Items,
+  helmets,
+  backpacks,
   rigs,
-} from "./item-data";
+  bosses,
+} from "../data/data";
+import { BossRes, Item, ItemsRes } from "../types/interface";
 import axios from "axios";
 
 const BASE_URL = "https://api.tarkov.dev/graphql";
 
 // 初回データ取得
-export const initData = async () => {
+const initData = async () => {
   fetchItems();
   fetchBosses();
 };
@@ -83,3 +82,5 @@ const fetchBosses = async () => {
     console.error("Error fetching data:", error);
   }
 };
+
+export default initData;

@@ -1,4 +1,4 @@
-export const maps = [
+const maps = [
   "Customs",
   "Factory",
   "Interchange",
@@ -11,8 +11,10 @@ export const maps = [
   "Woods",
 ];
 
-export const getMaps = () => {
+const getMaps = () => {
   const randomIndex = Math.floor(Math.random() * maps.length);
   const map = maps[randomIndex];
   return map;
 };
+
+export {maps, getMaps};

@@ -1,12 +1,4 @@
-export interface Boss{
-    name: string;
-}
-
-export interface BossRes{
-    bosses: Boss[];
-}
-
-export const bosses: Boss[] = [];
+import { bosses } from "../data/data";
 
 export const getBosses = () => {
     const randomIndex = Math.floor(Math.random() * bosses.length);
