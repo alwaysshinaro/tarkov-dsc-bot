@@ -1,6 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
-import { initData, getItems, ITEM_CATEGORIES, returnEquipment } from "./data";
+import { getItems, ITEM_CATEGORIES, returnEquipment } from "./data/item-data";
+import { initData } from "./data/init-data";
 
 dotenv.config();
 
@@ -47,6 +48,9 @@ client.on("messageCreate", async (message) => {
     await message.channel.send(
       `Random equipment:\n Gun: ${equipment.gun},\n Armor: ${equipment.armor},\n Helmet: ${equipment.helmet},\n Backpack: ${equipment.backpack},\n Rig: ${equipment.rig}`
     );
+  }
+  if (message.content === "!challenge") {
+    await message.channel.send("challenge");
   }
 });
 
