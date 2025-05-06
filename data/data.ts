@@ -10,4 +10,17 @@ const rigs: Item[] = [];
 
 const bosses: Boss[] = [];
 
-export { Items, guns, armors, helmets, backpacks, rigs, bosses };
+const maps = [
+    "Customs",
+    "Factory",
+    "Interchange",
+    "LightHouse",
+    "Labs",
+    "Reserve",
+    "Shoreline",
+    "Streets",
+    "The Lab",
+    "Woods",
+  ];
+
+export { Items, guns, armors, helmets, backpacks, rigs, bosses, maps };

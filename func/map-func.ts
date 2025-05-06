@@ -1,20 +1,9 @@
-const maps = [
-  "Customs",
-  "Factory",
-  "Interchange",
-  "LightHouse",
-  "Labs",
-  "Reserve",
-  "Shoreline",
-  "Streets",
-  "The Lab",
-  "Woods",
-];
+import { maps } from "../data/data";
 
 const getMaps = () => {
   const randomIndex = Math.floor(Math.random() * maps.length);
-  const map = maps[randomIndex];
+  const map = [randomIndex];
   return map;
 };
 
-export {maps, getMaps};
+export default getMaps;

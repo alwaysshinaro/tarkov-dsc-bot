@@ -1,5 +1,5 @@
 import { ITEM_CATEGORIES } from "../types/interface";
-import { getBosses } from "./boss-func";
+import getBosses from "./boss-func";
 import getItems from "./item-func";
 
 const getChallenge = () => {

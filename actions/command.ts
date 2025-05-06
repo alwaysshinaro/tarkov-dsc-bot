@@ -1,6 +1,6 @@
 import { Message, OmitPartialGroupDMChannel } from "discord.js";
-import { getMaps } from "../func/map-func";
-import { getBosses } from "../func/boss-func";
+import getMaps from "../func/map-func";
+import getBosses from "../func/boss-func";
 import getChallenge from "../func/challenge-func";
 import getItems from "../func/item-func";
 import { ITEM_CATEGORIES } from "../types/interface";
