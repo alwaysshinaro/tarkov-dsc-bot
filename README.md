@@ -1,4 +1,5 @@
 # Tarkov Equipment Discord Bot
+`!help` コマンド一覧を表示
 `!map` マップをランダムで返答<br>
 `!weapon` 銃をランダムで返答<br>
 `!armor` アーマーをランダムで返答<br>
