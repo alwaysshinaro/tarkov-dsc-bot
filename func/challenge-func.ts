@@ -6,7 +6,7 @@ const getChallenge = () => {
   const gun = getItems(ITEM_CATEGORIES.guns);
   const boss = getBosses();
   const randomeIndex = Math.floor(Math.random() * 10 + 1);
-  return `${boss}を${gun}で${randomeIndex}体倒す`;
+  return `${boss.name}を${gun.name}で${randomeIndex}体倒す`;
 };
 
 export default getChallenge;
