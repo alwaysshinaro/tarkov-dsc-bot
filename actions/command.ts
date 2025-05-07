@@ -8,8 +8,14 @@ import getEquipment from "../func/equip-func";
 
 const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
   if (message.author.bot) return;
+  if (message.content === "!help") {
+    message.channel.send(
+      "Commands:\n!map\n!weapon\n!armor\n!helmet\n!rig\n!backpack\n!equipment\n!boss\n!challenge"
+    );
+  }
   if (message.content === "!map") {
-    message.channel.send("Random map: " + getMaps());
+    const map = getMaps();
+    message.channel.send(`Random map: ${map}`);
   }
   if (message.content === "!weapon") {
     const gun = getItems(ITEM_CATEGORIES.guns);
@@ -40,7 +46,11 @@ const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
   if (message.content === "!equipment") {
     const equipment = getEquipment();
     message.channel.send(
-      `Random equipment:\nGun: [${equipment.gun.name}](${equipment.gun.wikiLink}),\nArmor: [${equipment.armor.name}](${equipment.armor.wikiLink}),\nHelmet: [${equipment.helmet.name}](${equipment.helmet.wikiLink}),\nBackpack: [${equipment.backpack.name}](${equipment.backpack.wikiLink}),\nRig: [${equipment.rig.name}](${equipment.rig.wikiLink})`
+      `Random equipment:\nGun: [${equipment.gun.name}](${equipment.gun.wikiLink}),
+      \nArmor: [${equipment.armor.name}](${equipment.armor.wikiLink}),
+      \nHelmet: [${equipment.helmet.name}](${equipment.helmet.wikiLink}),
+      \nBackpack: [${equipment.backpack.name}](${equipment.backpack.wikiLink}),
+      \nRig: [${equipment.rig.name}](${equipment.rig.wikiLink})`
     );
   }
   if (message.content === "!boss") {
