@@ -24,7 +24,7 @@ const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
   if (message.content === "!helmet") {
     const helmet = getItems(ITEM_CATEGORIES.helmets);
     message.channel.send(
-      `Random helmet: ${helmet.name}\n WIKI: ${helmet.wikiLink}`
+      `Random helmet: ${helmet.name}\nWIKI: ${helmet.wikiLink}`
     );
   }
   if (message.content === "!rig") {
