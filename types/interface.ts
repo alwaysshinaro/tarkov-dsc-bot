@@ -9,7 +9,7 @@ interface ItemsRes {
   items: Item[];
 }
 
-interface equipment {
+interface Equipment {
   gun: Item;
   armor: Item;
   helmet: Item;
@@ -34,5 +34,5 @@ const ITEM_CATEGORIES = {
   rigs: "rigs",
 };
 
-export type { Item, ItemsRes, equipment, Boss, BossRes};
+export type { Item, ItemsRes, Equipment, Boss, BossRes};
 export { ITEM_CATEGORIES };
