@@ -25,6 +25,8 @@ const fetchItems = async () => {
         items {
           name
           types
+          image512pxLink
+          wikiLink
         }
       }
     `;
@@ -67,6 +69,7 @@ const fetchBosses = async () => {
       {
       bosses{
         name
+        imagePosterLink
       }
   }`;
 

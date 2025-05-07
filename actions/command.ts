@@ -12,30 +12,40 @@ const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
     message.channel.send("Random map: " + getMaps());
   }
   if (message.content === "!weapon") {
-    message.channel.send("Random weapon: " + getItems(ITEM_CATEGORIES.guns));
+    const gun = getItems(ITEM_CATEGORIES.guns);
+    message.channel.send(`Random weapon: ${gun.name}\nWIKI: ${gun.wikiLink}`);
   }
   if (message.content === "!armor") {
-    message.channel.send("Random armor: " + getItems(ITEM_CATEGORIES.armors));
+    const armor = getItems(ITEM_CATEGORIES.armors);
+    message.channel.send(
+      `Random armor: ${armor.name}\nWIKI: ${armor.wikiLink}`
+    );
   }
   if (message.content === "!helmet") {
-    message.channel.send("Random helmet: " + getItems(ITEM_CATEGORIES.helmets));
+    const helmet = getItems(ITEM_CATEGORIES.helmets);
+    message.channel.send(
+      `Random helmet: ${helmet.name}\nWIKI: ${helmet.wikiLink}`
+    );
   }
   if (message.content === "!rig") {
-    message.channel.send("Random rig: " + getItems(ITEM_CATEGORIES.rigs));
+    const rig = getItems(ITEM_CATEGORIES.rigs);
+    message.channel.send(`Random rig: ${rig.name}\nWIKI: ${rig.wikiLink}`);
   }
   if (message.content === "!backpack") {
     const backpack = getItems(ITEM_CATEGORIES.backpacks);
-    message.channel.send("Random BackPack: " + backpack);
+    message.channel.send(
+      `Random backpack: ${backpack.name}\nWIKI: ${backpack.wikiLink}`
+    );
   }
   if (message.content === "!equipment") {
     const equipment = getEquipment();
     message.channel.send(
-      `Random equipment:\n Gun: ${equipment.gun},\n Armor: ${equipment.armor},\n Helmet: ${equipment.helmet},\n Backpack: ${equipment.backpack},\n Rig: ${equipment.rig}`
+      `Random equipment:\nGun: [${equipment.gun.name}](${equipment.gun.wikiLink}),\nArmor: [${equipment.armor.name}](${equipment.armor.wikiLink}),\nHelmet: [${equipment.helmet.name}](${equipment.helmet.wikiLink}),\nBackpack: [${equipment.backpack.name}](${equipment.backpack.wikiLink}),\nRig: [${equipment.rig.name}](${equipment.rig.wikiLink})`
     );
   }
   if (message.content === "!boss") {
     const boss = getBosses();
-    message.channel.send("Random Boss: " + boss);
+    message.channel.send(`Random boss: ${boss.name}\n${boss.imagePosterLink}`);
   }
   if (message.content === "!challenge") {
     const challenge = getChallenge();
