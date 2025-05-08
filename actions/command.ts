@@ -5,12 +5,13 @@ import getChallenge from "../func/challenge-func";
 import getItems from "../func/item-func";
 import { ITEM_CATEGORIES } from "../types/interface";
 import getEquipment from "../func/equip-func";
+import getRoles from "../func/role-func";
 
 const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
   if (message.author.bot) return;
   if (message.content === "!help") {
     message.channel.send(
-      "Commands:\n!map\n!weapon\n!armor\n!helmet\n!rig\n!backpack\n!equipment\n!boss\n!challenge"
+      "Commands:\n!map\n!weapon\n!armor\n!helmet\n!rig\n!backpack\n!equipment\n!boss\n!challenge\n!role"
     );
   }
   if (message.content === "!map") {
@@ -60,6 +61,10 @@ const commands = (message: OmitPartialGroupDMChannel<Message<boolean>>) => {
   if (message.content === "!challenge") {
     const challenge = getChallenge();
     message.channel.send(challenge);
+  }
+  if(message.content === "!role"){
+    const role = getRoles();
+    message.channel.send(`Random role: ${role}`);
   }
 };
 
