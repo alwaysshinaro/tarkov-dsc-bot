@@ -11,16 +11,18 @@ const rigs: Item[] = [];
 const bosses: Boss[] = [];
 
 const maps = [
-    "Customs",
-    "Factory",
-    "Interchange",
-    "LightHouse",
-    "Labs",
-    "Reserve",
-    "Shoreline",
-    "Streets",
-    "The Lab",
-    "Woods",
-  ];
+  "Customs",
+  "Factory",
+  "Interchange",
+  "LightHouse",
+  "Labs",
+  "Reserve",
+  "Shoreline",
+  "Streets",
+  "The Lab",
+  "Woods",
+];
 
-export { Items, guns, armors, helmets, backpacks, rigs, bosses, maps };
+const roles = ["Scav", "PMCs"];
+
+export { Items, guns, armors, helmets, backpacks, rigs, bosses, maps, roles };
