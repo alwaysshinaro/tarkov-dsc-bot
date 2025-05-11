@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node main.ts"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "keywords": [],
   "author": "",
