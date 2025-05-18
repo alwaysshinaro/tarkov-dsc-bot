@@ -25,7 +25,6 @@ const fetchItems = async () => {
         items {
           name
           types
-          image512pxLink
           wikiLink
         }
       }
