@@ -1,7 +1,6 @@
 interface Item {
   name: string;
   types: string[];
-  image512pxLink: string;
   wikiLink: string;
 }
 
